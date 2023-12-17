@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using Windows.Win32;
 using Windows.Win32.Foundation;
 using Windows.Win32.UI.Shell;
@@ -12,6 +13,13 @@ public static class RecycleBinHelper
     /// </summary>
     public static bool Recycle(string path)
     {
+        if (path.Length >= PInvoke.MAX_PATH)
+        {
+            throw new ArgumentOutOfRangeException(nameof(path));
+        }
+
+        // The string must be double-null terminated.
+        path = path.TrimEnd('\0') + '\0' + '\0';
         unsafe
         {
             fixed (char* pPath = path)

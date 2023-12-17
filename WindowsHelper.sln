@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RecycleBinHelper", "Recycle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsHelper", "WindowsHelper\WindowsHelper.csproj", "{8BB07DBF-8D29-4630-B798-3B5852BD23BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsHelperTests", "WindowsHelperTests\WindowsHelperTests.csproj", "{5CF1AA7E-7E23-4FDE-B768-D2C205020198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WindowsHelperTests", "WindowsHelperTests\WindowsHelperTests.csproj", "{5CF1AA7E-7E23-4FDE-B768-D2C205020198}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{9B61DBE0-BC1A-4EA7-86EF-B26DE0D0C25F}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
