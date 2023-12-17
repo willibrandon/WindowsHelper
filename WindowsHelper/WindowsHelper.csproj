@@ -9,7 +9,7 @@
 		<Title>A Windows library for .NET</Title>
 		<Authors>Brandon Williams</Authors>
 		<Description>A Windows library for .NET</Description>
-		<PackageProjectUrl></PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/willibrandon/windowshelper</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/willibrandon/windowshelper</RepositoryUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>Recycle Bin</PackageTags>
