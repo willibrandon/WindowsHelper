@@ -6,10 +6,21 @@
 		<Platforms>x64</Platforms>
 		<RootNamespace>$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Title>A Recycle Bin library for .NET</Title>
-		<Authors>willibrandon</Authors>
-		<Description>A Recycle Bin library for .NET</Description>
+		<Title>A Windows library for .NET</Title>
+		<Authors>Brandon Williams</Authors>
+		<Description>A Windows library for .NET</Description>
+		<PackageProjectUrl></PackageProjectUrl>
+		<RepositoryUrl>https://github.com/willibrandon/windowshelper</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>Recycle Bin</PackageTags>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.49-beta">
