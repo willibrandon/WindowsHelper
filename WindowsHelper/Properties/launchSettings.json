@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WindowsHelper": {
+      "commandName": "Project",
+      "commandLineArgs": "recycle"
+    }
+  }
+}
