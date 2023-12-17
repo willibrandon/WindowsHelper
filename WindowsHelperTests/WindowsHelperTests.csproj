@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RecycleBinHelper\RecycleBinHelper.csproj" />
+    <ProjectReference Include="..\WindowsHelper\WindowsHelper.csproj" />
   </ItemGroup>
 
 </Project>
