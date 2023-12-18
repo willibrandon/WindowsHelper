@@ -65,9 +65,6 @@ public static class RecycleBinHelper
     /// <summary>
     ///  Empties the Recycle Bin on the specified drive.
     /// </summary>
-    /// <param name="rootPath"></param>
-    /// <param name="flags"></param>
-    /// <returns></returns>
     public static bool EmptyRecycleBin(string rootPath, RecycleBinFlags flags)
         => PInvoke.SHEmptyRecycleBin(HWND.Null, rootPath, (uint)flags).Succeeded;
 
