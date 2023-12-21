@@ -1,3 +1,6 @@
+ChangeWindowMessageFilterEx
+GetClientRect
+GetConsoleWindow
 FILEOPERATION_FLAGS
 FO_COPY
 FO_DELETE
@@ -5,6 +8,8 @@ FO_MOVE
 FO_RENAME
 ITaskbarList4
 MAX_PATH
+RECT
+RegisterWindowMessage
 SHFileOperation
 SHFILEOPSTRUCTW
 SHEmptyRecycleBin
@@ -13,3 +18,6 @@ SHERB_NOPROGRESSUI
 SHERB_NOSOUND
 SHQueryRecycleBin
 SHQUERYRBINFO
+THBN_CLICKED
+WM_COMMAND
+WriteConsoleW

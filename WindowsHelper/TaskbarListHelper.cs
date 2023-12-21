@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using Windows.Win32.UI.Controls;
+using Windows.Win32;
 using Windows.Win32.Foundation;
+using Windows.Win32.UI.Controls;
 using Windows.Win32.UI.Shell;
 using Windows.Win32.UI.WindowsAndMessaging;
 
@@ -41,16 +42,16 @@ public static class TaskbarListHelper
     public static void SetActiveAlt(nint handle)
         => _taskbarList.SetActiveAlt((HWND)handle);
 
-    public static void SetOverlayIcon(nint handle, Icon icon, string accessibilityText)
+    public static void SetOverlayIcon(nint handle, Icon? icon, string description)
     {
         unsafe
         {
-            fixed (char* pAccessibilityText = accessibilityText)
+            fixed (char* pszDescription = description)
             {
                 _taskbarList.SetOverlayIcon(
                     (HWND)handle,
-                    new HICON(icon.Handle),
-                    new PCWSTR(pAccessibilityText));
+                    new HICON(icon?.Handle ?? IntPtr.Zero),
+                    new PCWSTR(pszDescription));
             }
         }
     }
@@ -68,20 +69,37 @@ public static class TaskbarListHelper
         => _taskbarList.SetTabOrder((HWND)handleTab, (HWND)handleInsertBefore);
 
     public static void SetThumbnailClip(nint handle, Rectangle rectangle)
-    {
-        unsafe
-        {
-            _taskbarList.SetThumbnailClip((HWND)handle, (RECT*)&rectangle);
-        }
-    }
+        => _taskbarList.SetThumbnailClip((HWND)handle, rectangle);
 
     public static void SetThumbnailTooltip(nint handle, string tooltip)
     {
         unsafe
         {
-            fixed (char* pTooltip = tooltip)
+            fixed (char* pszTip = tooltip)
             {
-                _taskbarList.SetThumbnailTooltip((HWND)handle, new PCWSTR(pTooltip));
+                _taskbarList.SetThumbnailTooltip((HWND)handle, new PCWSTR(pszTip));
+            }
+        }
+    }
+
+    public static void ThumbBarAddButtons(nint handle, THUMBBUTTON[] buttons)
+    {
+        unsafe
+        {
+            fixed (THUMBBUTTON* pButton = buttons)
+            {
+                _taskbarList.ThumbBarAddButtons((HWND)handle, (uint)buttons.Length, pButton);
+            }
+        }
+    }
+
+    public static void ThumbBarUpdateButtons(nint handle, THUMBBUTTON[] buttons)
+    {
+        unsafe
+        {
+            fixed (THUMBBUTTON* pButton = buttons)
+            {
+                _taskbarList.ThumbBarUpdateButtons((HWND)handle, (uint)buttons.Length, pButton);
             }
         }
     }
